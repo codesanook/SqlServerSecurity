@@ -1,0 +1,11 @@
+USE master
+GO
+
+CREATE LOGIN [sql-user]
+WITH PASSWORD = 'ankc^gn3dap87a#z',
+CHECK_POLICY = ON,
+CHECK_EXPIRATION = ON,
+DEFAULT_DATABASE = CodesanookMeetup
+
+GO
+

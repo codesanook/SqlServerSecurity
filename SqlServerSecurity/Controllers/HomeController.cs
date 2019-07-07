@@ -10,8 +10,27 @@ namespace SqlServerSecurity.Controllers
     {
         public ActionResult Index()
         {
-            var users = new List<IDictionary<string, object>>();
-            return View(users);
+            using (var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["CodesanookMeetup"].ConnectionString))
+            {
+                var command = connection.CreateCommand();
+                command.CommandText = "SELECT * FROM Users";
+                connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    var users = new List<IDictionary<string, object>>();
+                    while (reader.Read())
+                    {
+                        var row = Enumerable.Range(0, reader.FieldCount)
+                            .Select(index => new
+                            {
+                                Name = reader.GetName(index),
+                                Value = reader[index]
+                            }).ToDictionary(f => f.Name, f => f.Value);
+                        users.Add(row);
+                    }
+                    return View(users);
+                }
+            }
         }
     }
 }

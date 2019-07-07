@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<IDictionary<string, object>>
-
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Codesanook Meetup";
 }
 <div class="jumbotron">
     <h3>Codesanook Meetup</h3>
@@ -18,12 +17,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Man</td>
-                    <td>Real</td>
-                    <td>2018-07-09</td>
-                </tr>
+                @foreach (var row in Model)
+                {
+                    <tr>
+                        <th scope="row">@row["Id"]</th>
+                        <td>@row["FirstName"]</td>
+                        <td>@row["LastName"]</td>
+                        <td>@row["DateOfBirth"]</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
