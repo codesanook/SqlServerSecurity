@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServerSecurity", "SqlServerSecurity\SqlServerSecurity.csproj", "{71ABAB6A-743F-4503-A59F-5C89B8603F22}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{4CB61718-ADA3-4A5C-98E8-FF9CEA2E8F0A}"
+	ProjectSection(SolutionItems) = preProject
+		create-web-login-user-assign-role.sql = create-web-login-user-assign-role.sql
+		drop-web-login-user-remove-role.sql = drop-web-login-user-remove-role.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
