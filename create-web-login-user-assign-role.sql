@@ -1,4 +1,4 @@
-﻿USE MASTER
+﻿USE master
 GO
 
 CREATE LOGIN [aaron-mac-pro\web_user] FROM WINDOWS WITH DEFAULT_DATABASE = CodesanookMeetup
